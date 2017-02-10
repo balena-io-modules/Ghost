@@ -209,7 +209,6 @@ ConfigManager.prototype.set = function (config) {
         schedulingPath = path.join(contentPath, '/scheduling/');
     }
 
-    console.log({themePath})
     _.merge(this._config, {
         ghostVersion: packageInfo.version,
         paths: {

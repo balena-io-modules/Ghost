@@ -174,9 +174,9 @@ ConfigManager.prototype.set = function (config) {
     // Otherwise default to default content path location
     contentPath = this._config.paths.contentPath || path.resolve(appRoot, 'content');
     themePath = this._config.paths.themePath || path.resolve(contentPath, 'themes');
-    appPath = this._config.paths.themePath || path.resolve(contentPath, 'app');
-    dataPath = this._config.paths.themePath || path.resolve(contentPath, 'data');
-    imagesPath = this._config.paths.themePath || path.resolve(contentPath, 'images');
+    appPath = this._config.paths.appPath || path.resolve(contentPath, 'apps');
+    dataPath = this._config.paths.dataPath || path.resolve(contentPath, 'data');
+    imagesPath = this._config.paths.imagesPath || path.resolve(contentPath, 'images');
 
     assetHash = this._config.assetHash || generateAssetHash();
 

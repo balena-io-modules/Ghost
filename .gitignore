@@ -61,6 +61,7 @@ CHANGELOG.md
 /core/test/coverage
 
 /config.js
+/fixNpm.sh
 
 # Built asset files
 /core/built

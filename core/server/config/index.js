@@ -117,6 +117,9 @@ ConfigManager.prototype.set = function (config) {
         activeSchedulingAdapter,
         contentPath,
         themePath,
+        appPath,
+        dataPath,
+        imagesPath,
         schedulingPath,
         subdir,
         assetHash;
@@ -170,7 +173,10 @@ ConfigManager.prototype.set = function (config) {
     // Allow contentPath to be over-written by passed in config object
     // Otherwise default to default content path location
     contentPath = this._config.paths.contentPath || path.resolve(appRoot, 'content');
-    themePath = this._config.paths.themePath || path.resolve(contentPath, 'themes')
+    themePath = this._config.paths.themePath || path.resolve(contentPath, 'themes');
+    appPath = this._config.paths.themePath || path.resolve(contentPath, 'app');
+    dataPath = this._config.paths.themePath || path.resolve(contentPath, 'data');
+    imagesPath = this._config.paths.themePath || path.resolve(contentPath, 'images');
 
     assetHash = this._config.assetHash || generateAssetHash();
 
@@ -225,9 +231,9 @@ ConfigManager.prototype.set = function (config) {
 
             contentPath:      contentPath,
             themePath:        themePath,
-            appPath:          path.resolve(contentPath, 'apps'),
-            dataPath:         path.resolve(contentPath, 'data'),
-            imagesPath:       path.resolve(contentPath, 'images'),
+            appPath:          appPath,
+            dataPath:         dataPath,
+            imagesPath:       imagesPath,
             internalAppPath:  path.join(corePath, '/server/apps/'),
             imagesRelPath:    'content/images',
 
